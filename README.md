@@ -12,6 +12,10 @@
 
 ```az login```
 
+#### Find commands
+
+```az find```
+
 #### Resource group
 
 ```az group create –location x –name y```
