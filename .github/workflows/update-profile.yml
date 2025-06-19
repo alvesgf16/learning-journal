@@ -63,8 +63,8 @@ jobs:
         echo "✅ README.md exists"
         
         # Check 2: Verify the target line exists
-        if ! grep -q ".*I'm currently learning.*" README.md; then
-          echo "❌ ERROR: Learning line '- 🌱 I'm currently learning' not found in README.md"
+        if ! grep -q "🌱 I'm currently learning" README.md; then
+          echo "❌ ERROR: Learning line '🌱 I'm currently learning' not found in README.md"
           echo "Current README.md content:"
           cat README.md
           exit 1
@@ -72,9 +72,9 @@ jobs:
         echo "✅ Learning line found in README.md"
         
         # Check 3: Show current learning line
-        CURRENT_LINE=$(grep -e "- 🌱 I'm currently learning.*" README.md)
+        CURRENT_LINE=$(grep "🌱 I'm currently learning" README.md)
         echo "📋 Current learning line: $CURRENT_LINE"
-        echo "🎯 Will update to: - 🌱 I'm currently learning **$STACK_DISPLAY**."
+        echo "🎯 Will update to: 🌱 I'm currently learning **$STACK_DISPLAY**."
         
         # Check 4: Verify we're in the right repository
         REPO_NAME=$(basename $(git remote get-url origin) .git)
@@ -88,21 +88,21 @@ jobs:
         echo "=== Performing Update ==="
         
         # Create backup of original line
-        ORIGINAL_LINE=$(grep -e "- 🌱 I'm currently learning.*" README.md)
+        ORIGINAL_LINE=$(grep "🌱 I'm currently learning" README.md)
         
         # Update the README using sed
-        # This looks for the line containing "- 🌱 I'm currently learning" and replaces everything after "learning"
-        sed -i "s/- 🌱 I'm currently learning.*/- 🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
+        # This looks for the line containing "🌱 I'm currently learning" and replaces everything after "learning"
+        sed -i "s/🌱 I'm currently learning.*/🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
         
         # Check 5: Verify the change was made correctly
-        NEW_LINE=$(grep -e "- 🌱 I'm currently learning.*" README.md)
-        if [ "$NEW_LINE" = "- 🌱 I'm currently learning **$STACK_DISPLAY**." ]; then
+        NEW_LINE=$(grep "🌱 I'm currently learning" README.md)
+        if [ "$NEW_LINE" = "🌱 I'm currently learning **$STACK_DISPLAY**." ]; then
           echo "✅ Update successful!"
           echo "📋 Original: $ORIGINAL_LINE"
           echo "📋 Updated:  $NEW_LINE"
         else
           echo "❌ ERROR: Update didn't work as expected"
-          echo "📋 Expected: - 🌱 I'm currently learning **$STACK_DISPLAY**."
+          echo "📋 Expected: 🌱 I'm currently learning **$STACK_DISPLAY**."
           echo "📋 Actual:   $NEW_LINE"
           exit 1
         fi
