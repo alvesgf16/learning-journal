@@ -95,8 +95,8 @@ jobs:
         sed -i "s/- 🌱 I'm currently learning.*/- 🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
         
         # Check 5: Verify the change was made correctly
-        NEW_LINE=$(grep "🌱 I'm currently learning" README.md)
-        if [ "$NEW_LINE" = "🌱 I'm currently learning **$STACK_DISPLAY**." ]; then
+        NEW_LINE=$(grep -e "- 🌱 I'm currently learning" README.md)
+        if [ "$NEW_LINE" = "- 🌱 I'm currently learning **$STACK_DISPLAY**." ]; then
           echo "✅ Update successful!"
           echo "📋 Original: $ORIGINAL_LINE"
           echo "📋 Updated:  $NEW_LINE"
