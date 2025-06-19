@@ -4,6 +4,14 @@
 
 ### Initial steps
 
+#### Check version
+
+```az version```
+
+#### Login
+
+```az login```
+
 #### Resource group
 
 ```az group create –location x –name y```
@@ -22,3 +30,5 @@
 
 ```az webapp create –name b –plan z –resource-group y –runtime c```
 ```az webapp browse -n b –resource-group y```
+
+
