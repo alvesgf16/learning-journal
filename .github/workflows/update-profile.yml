@@ -1,0 +1,77 @@
+name: Update Profile README with Latest Learning
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout learning repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 2 # Get at least 2 commits to compare
+    
+    - name: Get latest commit message
+      id: commit-info
+      run: |
+        # Get the latest commit message
+        COMMIT_MSG=$(git log -1 --pretty=format:"%s")
+        echo "Latest commit: $COMMIT_MSG"
+        
+        # Extract the conventional commit type (stack name)
+        # This assumes format like "react: add hooks example" or "python: learn decorators"
+        STACK=$(echo "$COMMIT_MSG" | grep -oE '^[a-zA-Z0-9_+-]+' | head -1)
+        
+        if [ -z "$STACK" ]; then
+          echo "No valid stack found in commit message"
+          exit 1
+        fi
+        
+        # Capitalize first letter for better display
+        STACK_DISPLAY=$(echo "$STACK" | sed 's/./\U&/')
+        
+        echo "stack=$STACK" >> $GITHUB_OUTPUT
+        echo "stack_display=$STACK_DISPLAY" >> $GITHUB_OUTPUT
+        echo "Extracted stack: $STACK_DISPLAY"
+    
+    - name: Checkout profile repository
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.actor }}/${{ github.actor }}
+        token: ${{ secrets.PROFILE_UPDATE_TOKEN }}
+        path: profile-repo
+    
+    - name: Update README
+      run: |
+        cd profile-repo
+        
+        # Define the learning line pattern and replacement
+        STACK_DISPLAY="${{ steps.commit-info.outputs.stack_display }}"
+        
+        # Update the README using sed
+        # This looks for the line containing "🌱 I'm currently learning" and replaces everything after "learning"
+        sed -i "s/🌱 I'm currently learning.*/🌱 I'm currently learning **$STACK_DISPLAY**/" README.md
+        
+        # Check if the file was actually modified
+        if git diff --quiet; then
+          echo "No changes made to README.md"
+          exit 0
+        fi
+        
+        echo "README.md updated with: $STACK_DISPLAY"
+        cat README.md | grep "🌱 I'm currently learning"
+    
+    - name: Commit and push changes
+      run: |
+        cd profile-repo
+        
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        
+        git add README.md
+        git commit -m "🤖 Update currently learning: ${{ steps.commit-info.outputs.stack_display }}"
+        git push
