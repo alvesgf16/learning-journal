@@ -92,7 +92,7 @@ jobs:
         
         # Update the README using sed
         # This looks for the line containing "🌱 I'm currently learning" and replaces everything after "learning"
-        sed -i "s/🌱 I'm currently learning.*/🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
+        sed -i "s/- 🌱 I'm currently learning.*/- 🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
         
         # Check 5: Verify the change was made correctly
         NEW_LINE=$(grep "🌱 I'm currently learning" README.md)
@@ -102,7 +102,7 @@ jobs:
           echo "📋 Updated:  $NEW_LINE"
         else
           echo "❌ ERROR: Update didn't work as expected"
-          echo "📋 Expected: 🌱 I'm currently learning **$STACK_DISPLAY**."
+          echo "📋 Expected: - 🌱 I'm currently learning **$STACK_DISPLAY**."
           echo "📋 Actual:   $NEW_LINE"
           exit 1
         fi
