@@ -52,18 +52,68 @@ jobs:
         # Define the learning line pattern and replacement
         STACK_DISPLAY="${{ steps.commit-info.outputs.stack_display }}"
         
+        # Safety checks before making changes
+        echo "=== Pre-update Safety Checks ==="
+        
+        # Check 1: Verify README.md exists
+        if [ ! -f "README.md" ]; then
+          echo "❌ ERROR: README.md not found in profile repository"
+          exit 1
+        fi
+        echo "✅ README.md exists"
+        
+        # Check 2: Verify the target line exists
+        if ! grep -q "🌱 I'm currently learning" README.md; then
+          echo "❌ ERROR: Learning line '🌱 I'm currently learning' not found in README.md"
+          echo "Current README.md content:"
+          cat README.md
+          exit 1
+        fi
+        echo "✅ Learning line found in README.md"
+        
+        # Check 3: Show current learning line
+        CURRENT_LINE=$(grep "🌱 I'm currently learning" README.md)
+        echo "📋 Current learning line: $CURRENT_LINE"
+        echo "🎯 Will update to: 🌱 I'm currently learning **$STACK_DISPLAY**."
+        
+        # Check 4: Verify we're in the right repository
+        REPO_NAME=$(basename $(git remote get-url origin) .git)
+        if [ "$REPO_NAME" != "${{ github.actor }}" ]; then
+          echo "⚠️  WARNING: Repository name '$REPO_NAME' doesn't match expected profile repo '${{ github.actor }}'"
+          echo "Continuing anyway, but please verify this is correct..."
+        else
+          echo "✅ Confirmed we're in the profile repository"
+        fi
+        
+        echo "=== Performing Update ==="
+        
+        # Create backup of original line
+        ORIGINAL_LINE=$(grep "🌱 I'm currently learning" README.md)
+        
         # Update the README using sed
         # This looks for the line containing "🌱 I'm currently learning" and replaces everything after "learning"
-        sed -i "s/- 🌱 I'm currently learning.*/🌱 I'm currently learning **$STACK_DISPLAY**/" README.md
+        sed -i "s/🌱 I'm currently learning.*/🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
+        
+        # Check 5: Verify the change was made correctly
+        NEW_LINE=$(grep "🌱 I'm currently learning" README.md)
+        if [ "$NEW_LINE" = "🌱 I'm currently learning **$STACK_DISPLAY**." ]; then
+          echo "✅ Update successful!"
+          echo "📋 Original: $ORIGINAL_LINE"
+          echo "📋 Updated:  $NEW_LINE"
+        else
+          echo "❌ ERROR: Update didn't work as expected"
+          echo "📋 Expected: 🌱 I'm currently learning **$STACK_DISPLAY**."
+          echo "📋 Actual:   $NEW_LINE"
+          exit 1
+        fi
         
         # Check if the file was actually modified
         if git diff --quiet; then
-          echo "No changes made to README.md"
+          echo "ℹ️  No changes detected by git (content might be the same)"
           exit 0
         fi
         
-        echo "README.md updated with: $STACK_DISPLAY"
-        cat README.md | grep "🌱 I'm currently learning"
+        echo "🎉 README.md successfully updated with: $STACK_DISPLAY"
     
     - name: Commit and push changes
       run: |
