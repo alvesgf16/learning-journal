@@ -16,6 +16,10 @@
 
 ```az find```
 
+#### Interactive mode
+
+```az interactive```
+
 #### Resource group
 
 ```az group create –location x –name y```
