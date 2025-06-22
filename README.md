@@ -1,3 +1,20 @@
+# Cloud Computing
+
+## IaaS
+
+- Virtual machines (e.g., AWS instances, Azure VMs)
+
+## PaaS
+
+- Virtual machines, servers, networks, databases
+- Tools to support the application lifecycle (e.g., Heroku)
+
+## SaaS
+
+- Virtual machines, servers, networks, databases
+- Tools to support the application lifecycle
+- Software (e.g., SharePoint, Slack, Google Docs, Office 365, Trello)
+
 # Azure
 
 ## Azure CLI
