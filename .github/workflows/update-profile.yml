@@ -24,7 +24,7 @@ jobs:
         
         # Extract the conventional commit type (stack name)
         # This assumes format like "react: add hooks example" or "python: learn decorators"
-        STACK=$(echo "$COMMIT_MSG" | grep -oE '^[a-zA-Z0-9_+-]+' | head -1)
+        STACK=$(echo "$COMMIT_MSG" | cut -d':' -f1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
         
         if [ -z "$STACK" ]; then
           echo "No valid stack found in commit message"
