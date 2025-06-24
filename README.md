@@ -1,15 +1,35 @@
 # Cloud Computing
 
-## IaaS
+- Delivery of Information Technology (IT) resources on demand via the Internet, with pay-as-you-go pricing
+- Instead of buying, owning and maintaining physical data centers and servers, you can access technology services
+
+## History
+
+- 2000s: Cloud computing technology gains momentum as it is offered commercially
+  - 2006: The emergence of Amazon Web Services (AWS), which allowed businesses and individuals to rent virtual computers
+    - This suite of services included storage, computing, and networking, all based on the cloud
+  - 2007: Netflix launches its video streaming service, using the cloud to stream movies and other content
+  - 2008: launch of Google Cloud Platform (GCP)
+  - 2010: launch of Microsoft Azure
+
+## Characteristics
+
+- Ease of creating resources
+- Ease of scalability and maintenance of computing resources
+- Possibility of using Infra as Code (IaC)
+- Ease of thinking about Disaster Recovery
+- Cost control
+
+## Infrastructure as a Service (IaaS)
 
 - Virtual machines (e.g., AWS instances, Azure VMs)
 
-## PaaS
+## Platform as a Service (PaaS)
 
 - Virtual machines, servers, networks, databases
 - Tools to support the application lifecycle (e.g., Heroku)
 
-## SaaS
+## Software as a Service (SaaS)
 
 - Virtual machines, servers, networks, databases
 - Tools to support the application lifecycle
@@ -19,9 +39,14 @@
 
 ## Main advantages
 
+- Second largest cloud computing service provider used in the world
+- Easily scalable according to customer demands
+- Maximum capacity of a VM is 128vCPU and 3.5 TB memory
 - Supports a wide variety of frameworks and languages, like Java and C#
 - Allows working with different databases and operating systems
-- Easily scalable according to customer demands
+- Offers many services without necessarily being Microsoft
+- Offers very simple and direct integration with Microsoft tools
+- Ease of migrating on-premises Microsoft tools to the cloud
 
 ## Azure CLI
 
