@@ -49,7 +49,7 @@ jobs:
         fi
 
         # Verify README contains the learning line
-        if ! grep -q "- 🌱 I'm currently learning" README.md; then
+        if ! grep -qe "- 🌱 I'm currently learning" README.md; then
           echo "ERROR: README.md missing learning line"
           exit 1
         fi
@@ -58,7 +58,7 @@ jobs:
         sed -i "s/- 🌱 I'm currently learning.*/- 🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
         
         # Verify the update worked
-        if ! grep -q "- 🌱 I'm currently learning \*\*$STACK_DISPLAY\*\*\." README.md; then
+        if ! grep -qe "- 🌱 I'm currently learning \*\*$STACK_DISPLAY\*\*\." README.md; then
           echo "ERROR: Update verification failed"
           exit 1
         fi
