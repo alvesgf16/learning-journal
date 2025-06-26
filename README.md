@@ -20,16 +20,18 @@
 - Ease of thinking about Disaster Recovery
 - Cost control
 
-## Infrastructure as a Service (IaaS)
+## Service models
+
+### Infrastructure as a Service (IaaS)
 
 - Virtual machines (e.g., AWS instances, Azure VMs)
 
-## Platform as a Service (PaaS)
+### Platform as a Service (PaaS)
 
 - Virtual machines, servers, networks, databases
 - Tools to support the application lifecycle (e.g., Heroku)
 
-## Software as a Service (SaaS)
+### Software as a Service (SaaS)
 
 - Virtual machines, servers, networks, databases
 - Tools to support the application lifecycle
@@ -47,6 +49,22 @@
 - Offers many services without necessarily being Microsoft
 - Offers very simple and direct integration with Microsoft tools
 - Ease of migrating on-premises Microsoft tools to the cloud
+
+## Resource groups
+
+- Group items for a specific project to facilitate navigation
+  - All used resources are displayed when clicking on the group
+- Use grouping for cost estimation of a project
+  - Access the console to search the group for the estimated project value
+- To remove all resources after finishing a project, select the resource group and delete it
+  - No need to remove resources one by one
+
+### Creating a resource group
+
+- Subscription
+- Resource group name
+- Region
+- Tags
 
 ## Azure CLI
 
