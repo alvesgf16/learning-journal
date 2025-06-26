@@ -15,26 +15,18 @@ jobs:
       with:
         fetch-depth: 2 # Get at least 2 commits to compare
     
-    - name: Get latest commit message
+    - name: Extract stack from commit message
       id: commit-info
       run: |
-        # Get the latest commit message
         COMMIT_MSG=$(git log -1 --pretty=format:"%s")
-        echo "Latest commit: $COMMIT_MSG"
-        
-        # Extract the conventional commit type (stack name)
-        # This assumes format like "react: add hooks example" or "python: learn decorators"
-        STACK=$(echo "$COMMIT_MSG" | cut -d':' -f1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+        STACK=$(echo "$COMMIT_MSG" | cut -d':' -f1 | xargs)
         
         if [ -z "$STACK" ]; then
-          echo "No valid stack found in commit message"
+          echo "No valid stack found in commit message: $COMMIT_MSG"
           exit 1
         fi
         
-        # Capitalize first letter for better display
         STACK_DISPLAY=$(echo "$STACK" | sed 's/./\U&/')
-        
-        echo "stack=$STACK" >> $GITHUB_OUTPUT
         echo "stack_display=$STACK_DISPLAY" >> $GITHUB_OUTPUT
         echo "Extracted stack: $STACK_DISPLAY"
     
@@ -48,79 +40,42 @@ jobs:
     - name: Update README
       run: |
         cd profile-repo
-        
-        # Define the learning line pattern and replacement
         STACK_DISPLAY="${{ steps.commit-info.outputs.stack_display }}"
         
-        # Safety checks before making changes
-        echo "=== Pre-update Safety Checks ==="
-        
-        # Check 1: Verify README.md exists
+        # Verify README exists
         if [ ! -f "README.md" ]; then
-          echo "❌ ERROR: README.md not found in profile repository"
+          echo "ERROR: README.md not found"
           exit 1
         fi
-        echo "✅ README.md exists"
-        
-        # Check 2: Verify the target line exists
-        if ! grep -q "🌱 I'm currently learning" README.md; then
-          echo "❌ ERROR: Learning line '🌱 I'm currently learning' not found in README.md"
-          echo "Current README.md content:"
-          cat README.md
+
+        # Verify README contains the learning line
+        if ! grep -q "- 🌱 I'm currently learning" README.md; then
+          echo "ERROR: README.md missing learning line"
           exit 1
         fi
-        echo "✅ Learning line found in README.md"
         
-        # Check 3: Show current learning line
-        CURRENT_LINE=$(grep "🌱 I'm currently learning" README.md)
-        echo "📋 Current learning line: $CURRENT_LINE"
-        echo "🎯 Will update to: 🌱 I'm currently learning **$STACK_DISPLAY**."
-        
-        # Check 4: Verify we're in the right repository
-        REPO_NAME=$(basename $(git remote get-url origin) .git)
-        if [ "$REPO_NAME" != "${{ github.actor }}" ]; then
-          echo "⚠️  WARNING: Repository name '$REPO_NAME' doesn't match expected profile repo '${{ github.actor }}'"
-          echo "Continuing anyway, but please verify this is correct..."
-        else
-          echo "✅ Confirmed we're in the profile repository"
-        fi
-        
-        echo "=== Performing Update ==="
-        
-        # Create backup of original line
-        ORIGINAL_LINE=$(grep "🌱 I'm currently learning" README.md)
-        
-        # Update the README using sed
-        # This looks for the line containing "🌱 I'm currently learning" and replaces everything after "learning"
+        # Update the learning line
         sed -i "s/- 🌱 I'm currently learning.*/- 🌱 I'm currently learning **$STACK_DISPLAY**./" README.md
         
-        # Check 5: Verify the change was made correctly
-        NEW_LINE=$(grep -e "- 🌱 I'm currently learning" README.md)
-        if [ "$NEW_LINE" = "- 🌱 I'm currently learning **$STACK_DISPLAY**." ]; then
-          echo "✅ Update successful!"
-          echo "📋 Original: $ORIGINAL_LINE"
-          echo "📋 Updated:  $NEW_LINE"
-        else
-          echo "❌ ERROR: Update didn't work as expected"
-          echo "📋 Expected: - 🌱 I'm currently learning **$STACK_DISPLAY**."
-          echo "📋 Actual:   $NEW_LINE"
+        # Verify the update worked
+        if ! grep -q "- 🌱 I'm currently learning \*\*$STACK_DISPLAY\*\*\." README.md; then
+          echo "ERROR: Update verification failed"
           exit 1
         fi
+        
+        echo "Successfully updated learning status to: $STACK_DISPLAY"
+    
+    - name: Commit and push changes
+      run: |
+        cd profile-repo
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
         
         # Check if the file was actually modified
         if git diff --quiet; then
           echo "ℹ️  No changes detected by git (content might be the same)"
           exit 0
         fi
-        
-        echo "🎉 README.md successfully updated with: $STACK_DISPLAY"
-    
-    - name: Commit and push changes
-      run: |
-        cd profile-repo
-        
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
         
         git add README.md
         git commit -m "🤖 Update currently learning: ${{ steps.commit-info.outputs.stack_display }}"
