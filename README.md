@@ -61,10 +61,138 @@
 
 ### Creating a resource group
 
-- Subscription
-- Resource group name
-- Region
+- Basics
+  - Subscription
+  - Resource group name
+  - Region
 - Tags
+
+## Virtual machines
+
+Computing resources offered by the clouds, in which we can select disk capacities, memory, processing power, among other resources
+
+### Creating a virtual machine
+
+#### Basics
+
+- Project details
+  - Subscription
+    - Resource group
+- Instance details
+  - Virtual machine name
+  - Region (normally the same as the resource group)
+  - Availability options:
+    - **No infrastructure redundancy required**
+    - Availability zone: separate resources within a region
+    - Availability set: distribute resources across multiple fault domains (distribute VMs across multiple physical hosts)
+    - Virtual machine scale set: distribute VMs across zones and fault domains at scale
+  - Security type: **Standard**, or Trusted launch virtual machines
+  - Image (OS)
+  - VM Architecture: Arm64 or **x64**
+  - Run with Azure Spot discount: idle Microsoft Azure resources they leave available
+  - Size
+  - Enable Hibernation
+- Administrator account
+  - Authentication type: **SSH public key** or Password
+  - Username
+  - SSH public key source
+  - SSH Key Type
+      - RSA: suitable for older systems or when compatibility is a primary concern
+      - Ed25519: recommended for new systems and applications where security and performance are critical
+  - Key pair name
+- Inbound port rules
+  - None: the machine will be completely inaccessible via the internet
+  - **Allow selected ports**
+    - Select inbound ports: HTTP (80), HTTPS (443), **SSH (22)**
+
+#### Disks
+
+- VM disk encryption
+  - Encryption at host
+- OS disk
+  - OS disk size
+  - OS disk type: Premium SSD, Standard SSD, or **Standard HDD** in a **locally-** or zone- redundant storage
+  - **Delete with VM**: When we remove the VM the disk will be deleted along with it
+  - Key management: **platform-**, customer-, or platform- and customer-managed keys
+  - Enable Ultra Disk compatibility
+
+#### Networking
+
+- Network interface (automatically created when creating a virtual machine)
+  - Virtual network
+  - Subnet
+  - Public IP
+  - NIC network security group: None, **Basic**, or Advanced
+  - Public inbound ports
+    - None: the machine will be completely inaccessible via the internet
+    - **Allow selected ports**
+      - Select inbound ports: HTTP (80), HTTPS (443), **SSH (22)**, RDP (3389)
+  - **Delete public IP and NIC when VM is deleted**
+  - Enable accelerated networking
+- Load balancing
+  - Load balancing options: **None**, Azure load balancer, or Application gateway
+
+#### Management
+
+- Microsoft Defender for Cloud
+- Identity
+  - Enable system assigned managed identity
+- Microsoft Entra ID
+  - Login with Microsoft Entra ID
+- Auto-shutdown
+  - Enable auto-shutdown
+- Backup
+  - Enable backup
+- Guest OS updates
+  - Enable periodic assessment
+  - Patch orchestration options: Image default
+
+#### Monitoring
+
+- Alerts
+  - Enable recommended alert rules: warn when the CPU percentage is 80%, when the available memory bytes are less than a certain number, and so on
+- Diagnostics
+  - Boot diagnostics
+    - **Enable with managed storage account**
+    - Enable with custom storage account
+    - Disable
+  Enable OS guest diagnostics
+- Health
+  - Enable application health monitoring
+
+#### Advanced
+
+- Extensions
+- VM applications
+- Custom data and cloud init: we can include some script in the "custom data" box that will run when starting the VM
+- User data
+  - Enable user data
+- Performance (NVMe)
+  - Higher remote disk storage performance with NVMe
+- Host
+  - Host group
+- Capacity reservations
+  - Capacity reservation group
+- Proximity placement group
+  - Proximity placement group
+
+#### Tags
+
+### Connecting to a virtual machine
+
+#### Using SSH
+
+- Store the key we received on the machine and chmod it to 400, if it is Linux
+  - If it is Windows, use WSL to edit or create (using sudo) /etc/wsl.conf and add the following:
+    ```
+    [automount]
+    options = "metadata"
+    ```
+  - Shut down all WSL instances and restart an instance, and any chmod changes are now retained
+- Provide a path to the key
+  ```
+  ssh -i <SSL key file> <Administrator account username>@<VM public IP address>
+  ```
 
 ## Azure CLI
 
