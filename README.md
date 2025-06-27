@@ -183,16 +183,56 @@ Computing resources offered by the clouds, in which we can select disk capacitie
 #### Using SSH
 
 - Store the key we received on the machine and chmod it to 400 if it is Linux
-  - If it is Windows, use WSL to edit or create (using sudo) /etc/wsl.conf and add the following:
-    ```
- [automount]
- options = "metadata"
-    ```
-  - Shut down all WSL instances and restart an instance, and any chmod changes are now retained
-- Provide a path to the key
+  - If it is Windows, use WSL to edit or create (using sudo) /etc/wsl.conf and add the following:
+    ```
+    [automount]
+    options = "metadata"
+    ```
+  - Shut down all WSL instances and restart an instance, and any chmod changes are now retained
+- Provide a path to the key:
   ```
- ssh -i <SSL key file> <Administrator account username>@<VM public IP address>
+  ssh -i <SSL key file> <Administrator account username>@<VM public IP address>
   ```
+
+### Configuring the virtual machine as a web server (Node.js)
+
+#### Installing Node.js
+
+- Inside the Azure VM, run the commands below to prepare it as a web server
+  ```
+  sudo apt-get update
+  sudo apt-get install nodejs
+  sudo apt-get install npm
+  ```
+- Next, confirm the installation and version with the command:
+  ```
+  node --version`
+  ```
+
+#### Deploying a web application
+
+- First, clone the application repository and enter it:
+  ```
+  git clone <repository URL>
+  ```
+  - Enter the repository folder you just cloned
+    ```
+    cd <application directory>
+    ```
+- Update any configuration files to use information from Azure resources
+- Install the dependencies
+  ```
+  npm install
+  ```
+- Prepare the server to be a *webserver*
+  ```
+  npm install express --save
+  ```
+- Start the application
+  ```
+  DEBUG=<application directory>:* npm start
+  ```
+
 
 ## Databases
 
