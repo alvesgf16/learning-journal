@@ -1,3 +1,36 @@
+# Kotlin
+
+## What is Kotlin?
+
+- Kotlin is an object-oriented programming language
+- It is compatible with the Java platform
+  - Kotlin runs on Java Virtual Machines (JVMs) and other platforms, like Android.
+  - The syntax of Kotlin is similar to Java
+  - Many features and programming concepts in Kotlin are similar to those in Java.
+- It is a modern language suitable for developing:
+  - Android applications
+  - Web applications
+  - Desktop applications
+- Known as a practical programming language
+- Designed to be safe and concise, allowing developers to write less code for simple tasks.
+- Offers advanced features such as:
+  - Functional programming
+  - Function extensions
+  - Lambda expressions
+- Facilitates writing asynchronous and concurrent code
+- Its ease of reading makes it attractive for developers
+- Enables faster and more enjoyable code writing
+
+## History of Kotlin
+
+- **2010**: Kotlin is developed by JetBrains, the creators of IntelliJ IDEA, designed as a modern, concise, secure, and Java-interoperable programming language for the JVM (Java Virtual Machine)
+- **2011**: Kotlin is first publicly presented at the JVMLS (Java Virtual Machine Language Summit) conference
+- **2016**: The official release of Kotlin 1.0 occurs
+- **2017**: Google names Kotlin an official development language for Android
+- **2019 & 2020**: Ranked as the fourth most-loved programming language in Stack Overflow's Developer Surveys
+- **2021**: Drops to 14th place in the Developer Survey
+- **2022**: Rises to 11th place in the Developer Survey, remaining among the most loved languages
+
 # Cloud Computing
 
 - Delivery of Information Technology (IT) resources on demand via the internet, with pay-as-you-go pricing
