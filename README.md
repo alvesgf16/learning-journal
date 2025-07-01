@@ -2,17 +2,17 @@
 
 ## What is Kotlin?
 
-- Kotlin is an object-oriented programming language
-- It is compatible with the Java platform
-  - Kotlin runs on Java Virtual Machines (JVMs) and other platforms, like Android.
-  - The syntax of Kotlin is similar to Java
-  - Many features and programming concepts in Kotlin are similar to those in Java.
-- It is a modern language suitable for developing:
+- An object-oriented programming language
+- Compatible with the Java platform
+  - Runs on Java Virtual Machines (JVMs) and other platforms, like Android
+  - Similar syntax to Java
+  - Many features and programming concepts are similar to those in Java
+- A modern language suitable for developing:
   - Android applications
   - Web applications
   - Desktop applications
 - Known as a practical programming language
-- Designed to be safe and concise, allowing developers to write less code for simple tasks.
+- Designed to be **safe and concise**, allowing developers to write less code for simple tasks
 - Offers advanced features such as:
   - Functional programming
   - Function extensions
@@ -21,15 +21,282 @@
 - Its ease of reading makes it attractive for developers
 - Enables faster and more enjoyable code writing
 
-## History of Kotlin
+## History
 
 - **2010**: Kotlin is developed by JetBrains, the creators of IntelliJ IDEA, designed as a modern, concise, secure, and Java-interoperable programming language for the JVM (Java Virtual Machine)
 - **2011**: Kotlin is first publicly presented at the JVMLS (Java Virtual Machine Language Summit) conference
 - **2016**: The official release of Kotlin 1.0 occurs
 - **2017**: Google names Kotlin an official development language for Android
-- **2019 & 2020**: Ranked as the fourth most-loved programming language in Stack Overflow's Developer Surveys
+- **2019 & 2020**: Ranked as the **fourth most-loved programming language** in Stack Overflow's Developer Surveys
 - **2021**: Drops to 14th place in the Developer Survey
 - **2022**: Rises to 11th place in the Developer Survey, remaining among the most loved languages
+
+## Why learn it?
+
+- Modern, expressive, secure, and concise language
+- Interoperability with Java, beneficial for those familiar with it
+  - Leverages the ecosystem of the widely used Java language
+- **Multi-platform capabilities: supports multiple programming paradigms**:
+  - Object-oriented
+  - Functional
+  - Imperative
+- Ranked among the 15 most widely used languages in 2021 (Stack Overflow survey) with 8.32% preference among developers
+- **Adopted by** Trello, Google, Pinterest, Uber, Netflix
+- Career Opportunities:
+  - **Diverse profiles for specialized roles**, including:
+    - Back-end developers
+    - Java developers
+    - Mobile developers
+    - Game developers
+    - Software engineers
+
+## What is it for?
+
+- Web
+  - Back-end
+    - Increasing adoption for **web development** and **server-side systems**
+    - Availability of various frameworks and libraries to support developers
+- Android
+  - Popular due to **concise syntax and interoperability with Java**
+  - Offers an easier and more efficient way to develop applications, depending on project needs
+- Desktop
+- Data Science
+
+- Differences in Contexts
+  - In Android development, code executes on an Android virtual machine
+  - In back-end systems, code executes on an application server or a Java virtual machine
+
+### Kotlin and Web Development
+
+- Interoperability allows working with existing Java tools, libraries, and frameworks, facilitating commercial adoption
+- Major Java frameworks such as ***Spring***, ***Quarkus***, and ***Javalin*** have been implemented
+- Leverages its JVM-based architecture to ease the process of migrating from Java
+  - Allows for gradual changes in large applications
+    - New software features can be written in Kotlin and integrated into existing Java production systems without significant difficulties
+    - Legacy Java code can be progressively migrated
+- **Seamless migration from Java to Kotlin is possible without major conflicts and inconsistencies**
+
+#### Kotlin for JavaScript
+
+**Kotlin can relate to JavaScript through a process called "transpilation"**
+- Unlike Java, where the *Java Virtual Machine (JVM)* is used for bytecode interpretation, utilizes a Kotlin-to-JavaScript compiler
+  - This compiler generates JavaScript (.js) and TypeScript (.ts) files from native Kotlin code
+- Allows for:
+  - Creation of hybrid applications combining Kotlin with other languages
+  - Development of front-end applications, such as those using React, and back-end applications with Node.js
+  - Multi-platform applications, allowing code reuse in Kotlin/JS and mobile applications
+  - Creation of libraries for consumption via JavaScript and TypeScript, facilitating hybrid application development
+
+### Kotlin Native
+
+- Developed as a variation of Kotlin that **compiles directly into the operating system's native binary instead of bytecode** for the JVM
+  - Allows better optimization of hardware usage
+- **Supports development for embedded systems**:
+  - Examples include **cell phones and televisions**, where virtual machines can be costly due to hardware limitations
+  - Enables native development for Android, iOS, and desktop operating systems (MacOS, Windows, Linux)
+- Supports interoperability with languages such as C and Swift:
+  - Allows generation of libraries for other languages from Kotlin code and utilizing libraries written in those languages
+
+### Kotlin for Data Science
+
+- Kotlin as a modern programming language has entered the Data Science domain, offering tools for **creating**:
+  - **Pipelines**
+  - **Machine learning models**
+  - **Artificial intelligence** applications
+- Benefits include:
+  - Leveraging the features of the JVM
+  - Incorporating *Null Safety*
+  - Easy to learn
+  - Ability to utilize Java libraries focused on data
+- Can be used in Notebooks (e.g., Jupyter Notebooks), which are valuable for:
+  - Exploratory data analysis
+  - Research studies
+
+## Kotlin vs Java: which one to use?
+
+| | Kotlin | Java |
+| --- | --- | --- |
+| **Popularity** | More modern programming language | One of the most widely used programming languages globally |
+| **Usage** | Increasingly adopted in Android and backend projects | Employed in a diverse range of projects |
+| **Community Support** | Growing community support | Highly active community |
+| **Learning Curve** | Easier to learn and use (than Java) | Steeper learning curve |
+| **Learning Resources** | Good documentation and resources available | Numerous resources available, including comprehensive documentation |
+| **Syntax** | Precise and concise syntax | More verbose syntax |
+| **Null Safety** | ✔️ | ❌ |
+
+- **Choosing a language**
+  - Depends on several factors, including:
+    - Project needs
+    - Development team's preferences
+  - Both Java and Kotlin have their own advantages and disadvantages
+  - Evaluating each factor carefully is necessary for the best choice
+
+## Flutter vs Kotlin: what is the difference?
+
+| | Kotlin | Flutter |
+| --- | --- | --- |
+| **What is it?** | Programming language | Framework (Dart) |
+| **For what is it best?** | Accessing native resources and platform features | Applications targeting multiple platforms with a single codebase |
+
+### Kotlin Multi-platform (KMM)
+
+  - Addresses multi-platform development
+  - Allows sharing a codebase centered on business rules across various platforms
+  - Each platform implements the business logic and presents the UI using its preferred frameworks
+
+## Is Kotlin object-oriented or functional?
+
+- Classified as a **multiparadigm language**
+- Robustly **supports both object-oriented and functional paradigms**
+- Being derived from Java, shares several aspects with it, including being object-oriented
+  - Both Kotlin and Java have a **superclass**: 
+    - Kotlin uses `Any` as its superclass
+    - Java uses `Object` as its superclass
+  - Supports **interface inheritance**.
+  - Enables the creation of applications using the object-oriented paradigm
+- Introduces new or improved features that distinguish it from Java, more focused on functional programming, incorporating:
+  - *Callback* functions
+  - *Higher-order* functions
+
+## Features
+
+- Is derived from Java and runs in the Java ecosystem
+- Code compiles to bytecode, interpreted by the Java Virtual Machine (JVM)
+- **Interoperability**: Can utilize Java code within its applications
+- Ability to use existing Java libraries without rewriting code
+  - Contributes to Kotlin's robustness, similar to that of Java
+
+### Syntax
+
+- **Concise and easy-to-understand**
+  - Makes programming more accessible to developers.
+
+```
+fun main(){
+    println("Hello, world!")
+}
+```
+
+- Uses **variable inference** as the standard for declaring variables
+  - There is no need to explicitly state the type of the variable
+  - The compiler determines the type of the variable automatically, based on the assigned value
+  - Use the `var` keyword to declare a variable, followed by the variable name and assigned value
+    - It is crucial to assign a value when declaring variables to avoid compilation errors
+
+    ```
+    var hello = "Hello, world!"
+    ```
+
+  - Unlike JavaScript and Python, **does not support dynamic typing**
+    - Once a variable is assigned a value, its type cannot be changed.
+  - Eliminates the need for a semicolon at the end of each instruction.
+
+#### Basic types
+
+- Primitive types
+
+  | Category | Type |
+  | --- | --- |
+  | Numeric | Int, Double, Float |
+  | Logical |  Boolean |
+  | Text | String, Char |
+
+- Complex types
+  - Classes
+  - Enums
+  - Interfaces
+
+#### Functions
+
+- One of the language's greatest strengths is its **functional approach**
+  - The functional paradigm emphasizes the importance of functions in development
+    - Key concepts include:
+      - Function composition
+      - Higher-order functions
+      - Lambdas
+  - This approach changes the way functions are handled in:
+    - Development context
+    - Language itself
+    - Virtual machine
+- Functions can be used in a:
+  - Object-oriented context
+  - Procedural manner
+- The syntax is leaner compared to its parent language
+
+  ```
+  fun sum(a: Int, b: Int): Int {
+      return a + b;
+  }
+  ```
+
+  - The `fun` keyword indicates a function in Kotlin
+  - The function is named `sum` and is followed by parentheses for parameters
+    - Parameters must explicitly include the names of scope variables and their types
+  - The function returns a value of type `Int`, as it calculates the sum of two integers
+    - If a function does not return a value, specifying the return type is unnecessary (unlike Java, where `void` is required for no return)
+- **Kotlin's handling of functions differs from Java** and **resembles JavaScript**:
+  - Functions can be treated as parameters
+  - Functions can be assigned to variables
+  - Example: It's possible to rewrite the `sum()` function as previously shown
+
+    ```
+    fun main() {
+        var sum: ((Int, Int) -> Int) = {a, b -> a + b}
+    }
+    ```
+
+    - The code may seem confusing at first glance
+    - It functions similarly to the previously shown function but is written differently
+    - A lambda expression is used: `{a, b -> a + b}`
+      - This means: "Given a and b, return a plus b"
+    - The lambda function is assigned to the variable `sum`
+    - An unusual piece of code illustrates what happens inside the function
+      - Key point:
+        - The syntax `((Int, Int) -> Int)` indicates:
+          - It receives two integers as parameters
+          - The final result will be an integer
+      - The return type is determined by what follows the expression arrow (->)
+- Functions encompass a broad topic with numerous features due to the functional paradigm, including *Named Parameters*, which ensure correct arguments are passed to the functions
+
+### Null Safety
+
+- Mitigates *NullPointerException* (NPE) occurrences
+  - When a reference is null and a call is made to it
+  - It is a runtime issue, making it hard to predict during development since there's no compile-time assistance
+
+#### Safe Calls Operator
+
+- Prevents implicit NPEs
+  - In Kotlin, **an NPE will only occur if explicitly thrown or through interoperability with Java**
+- Checks if a property value is non-null
+  - If the value is non-null, it returns the property
+  - If the value is null, it returns `null`
+
+```
+account?.holder?.getName()
+```
+
+- The compiler first attempts to access the value of the `account` variable
+- If the `account` variable exists, it then tries to access the value of the `holder`
+- The `getName()` method is called only if both `account` and `holder` are not null
+- If either `account` or `holder` is null, the code returns `null` and avoids calling `getName()`, preventing a null reference exception
+- This approach eliminates the need for separate error handling for null values
+
+#### Nullable Receiver
+
+- Used when the goal is to store values in variables
+  - When declaring a variable, specify its type followed by the "?" operator
+
+    ```
+    val account: Account? = null
+    ```
+
+    - The `?` operator indicates that the variable can hold either an Account type object or a null value
+  - **Without the "?" operator, objects cannot assume the null value**
+- Includes treatments to prevent Null Pointer Exceptions (NPE)
+  - One treatment allows calling the `toString()` method on an object:
+    - If the object is null, the compiler returns the String `"null"` instead of causing an error
+      - This behavior is useful for debugging code
 
 # Cloud Computing
 
