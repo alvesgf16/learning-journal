@@ -1,3 +1,355 @@
+# Mobile Development
+
+## What is an app?
+
+- An **application**, commonly known as an app, is a program designed to help perform specific tasks on devices
+- **Applications** serve various functions and share the goal of **solving specific problems or simplifying tasks in daily life**
+- The term **application** comes from the Latin word *applicare*, meaning "to place on" or "to bring near"
+- In technology, applications are tools we "apply" to execute tasks on computers or smartphones
+- The concept of apps significantly changed in 2007 with the launch of the first iPhone by Apple
+- Prior to the iPhone, programs existed for computes and older cell phones, but the iPhone popularized easy-to-download and install small programs 
+- Apps revolutionized technology usage in daily life, transforming smartphones into command centers
+- Today, apps are essential in everyday tasks, such as waking up with an alarm clock or relaxing with a video app before bed
+
+## What is an app for?
+
+- Apps are designed to **simplify and enhance our lives**
+  - They automate tasks and make processes faster and more accessible
+  - Provide tailored experiences that fit our needs conveniently
+
+### App stores
+
+- Serve as secure, centralized platforms for downloading and installing apps
+- Minimize concerns about viruses or malfunctioning software
+- Users experience enhanced security when downloading apps
+- Developers gain a dependable method to distribute their apps
+- Instant access to apps without needing to leave home or wait for extended periods
+- Quick downloads and installations with just a few taps on the screen
+
+## How apps work
+
+- Each app communicates with your phone and uses the device's own tools to perform tasks
+- Each app is designed to utilize different features of the device, ensuring an optimal user experience
+- Not all apps are created equal; **different types interact with the phone in unique ways**, even if they have similar functions
+
+### Global Positioning System (GPS)
+
+- GPS allows the phone to know your real-time location
+- Maps apps use this information to display routes and suggest nearby places
+
+### Camera
+
+- Allows users to take photos, record videos, and share them with friends
+- Apps like Instagram or WhatsApp communicate with the phone's camera features
+
+### Gyroscope
+
+- A sensor that detects device orientation (e.g., turning the phone)
+- Enables the screen to adjust as you turn the device
+- Used in games that require physical phone movements (e.g., steering wheels)
+
+## Types of applications
+
+### Native apps
+
+- Created specifically for an operating system (e.g., Android, iOS)
+- **Developed using OS-specific languages and tools**
+  - iOS: Swift (or Objective-C), exclusive to Apple devices (iPhones, iPads, Apple Watch)
+  - Android: Kotlin (or Java), tailored for millions of devices (smartphones, tablets, smartwatches running Android Wear)
+  - Smart TVs and Native Apps: e.g., Samsung's Tizen, LG's webOS, optimized for remote controls and large screens
+- This diversity makes native development appealing to developers
+- **Full access to device features** (e.g., camera, GPS, gyroscope)
+- Developing a native app requires thorough knowledge of each system
+- Results in an app that looks and functions precisely as intended for that specific platform
+- Fast and efficient performance
+
+#### Advantages
+
+- Choosing to create a native app directly impacts its performance and device power utilization
+  - E.g., developing a game for iPhone allows access to iOS features (e.g., enhanced graphics, camera use for augmented reality)
+  - Apps run more smoothly by leveraging all device features tailored for the operating system
+- Native development allows teams to specialize in either Android or iOS, resulting in a more refined user experience
+- Companies can create features reliant on specific device sensors (e.g., facial recognition on iPhone) without adapting for other systems
+- Each platform has distinct tools and languages, enabling the formation of specialized teams
+  - This specialization encourages deeper exploration of advanced features
+- Creating native applications provides the freedom to maximize hardware and system benefits, resulting in highly optimized applications for end-users
+
+#### Disadvantages
+
+- **Cost** issues
+  - Separate development for each operating system (iOS and Android)
+  - Requires multiple teams of developers, increasing budget and development time
+  - Results in two different app versions rather than a single version
+- **Maintenance** concerns
+  - Native apps must be updated with platform changes and updates
+  - Regular updates needed for iOS and Android to work with new features or internal changes
+  - High long-term costs due to specificities and constant updates of each system
+- Flexibility limitations
+  - Native apps are tailored to specific platforms, creating a "lock-in" effect
+  - Launching on new platforms (e.g., Windows, Tizen, Wear OS) often requires starting from scratch
+  - Lack of flexibility can be a significant hurdle for startups or companies wanting to be present on multiple platforms without excessive time and financial investment
+
+#### Examples
+
+**WhatsApp**
+
+- A prime example of a native app
+- Deep integration with the phone's system
+- Utilizes features such as camera, microphone, and notification system
+- Seamless operation for sending photos and making voice calls
+- Uses native push messaging for immediate notifications
+
+**Spotify**
+
+- Designed to leverage the device's audio system
+- Integrates with volume controls and background playback
+- Allows playback while multitasking (e.g., sending messages or browsing)
+- Connects with hardware to adjust audio based on bluetooth headphones or speakers
+
+**Pokémon Go**
+
+- Native app that heavily uses mobile features
+- Utilizes GPS for location tracking, camera for augmented reality, and gyroscope for immersive experience
+- Facilitates Pokémon appearances in the real world through sensor integration
+
+**Waze**
+
+- Popular navigation app with accurate GPS connection
+- Guides users through traffic in real time
+- Integrates network data for traffic updates, speed camera alerts, and accident reports
+- Utilizes native notification system
+- Capable of running in the background for alerts when the app is closed
+
+### Web apps (Progressive Web Apps, PWAs)
+
+- **Accessed directly through a browser**; no download required
+- Function like websites with app-like features (e.g., large buttons, notifications, offline capability)
+- **Built with web technologies (HTML, CSS, JavaScript)**
+- Can run on any device with a browser
+- Convenient for saving device store space
+- Quick access to services without instalation hassle
+- Can work offline if some data has been loaded
+  - In areas with limited internet access, basic functions of a PWA remain usable
+  - Temporary data storage on the device allows continued use of certain features
+- Limited access to device resources compared to native apps
+- Generally slower than native apps
+
+#### Advantages
+
+- For companies:
+  - **Flexibility**:
+    - Web apps function across devices: iPhones, Androids, and computers, needing only a browser and internet connection
+    - No dependence on app stores for access
+    - Direct access via a link, bypassing store approval processes and compatibility issues
+    - Continuous updates without waiting for external approvals, ensuring quick feature releases and bug fixes
+    - Users are not required to download new versions
+  - Improved **reach**:
+    - Lower barriers to entry for users who don’t need to worry about storage or system compatibility
+    - Users can access the app directly through a browser link
+    - Ideal for targeting a diverse audience without developing multiple app versions
+- For teams:
+  - Simplified development:
+    - Focus on a **single version** rather than separate apps for Android and iOS
+    - Centralized **code management** for easier updates and efficiency
+    - Leaner, more agile teams, eliminating the need to cater to specific operating systems
+- For users:
+  - Convenience:
+    - Accessing apps without using device storage
+    - Practical solution for those reluctant to download too many apps or limited by storage space
+    - Progressive Web Apps (PWAs) provide essential functionality without compromising user experience
+
+#### Disadvantages
+
+- Web applications provide numerous benefits but also have notable issues that need consideration in relation to company goals
+- Limitations can affect both user experience and development strategies
+- PWAs function similarly to native apps but cannot access all device features equally
+  - Advanced uses of GPS, specific camera controls, and sensors (like gyroscopes) may be limited
+  - Barriers may be faced based on the user’s device and browser
+- PWAs operate within browsers, subjecting them to limitations imposed by those browsers
+  - Feature support varies among different browsers (e.g., an app may work well in Chrome but not in Safari)
+  - This inconsistency can be frustrating for developers and users
+- Many PWAs offer some offline support, but full functionality typically relies on a good internet connection
+  - Weak signals or lack of connectivity can hinder app performance and usability
+
+#### Examples
+
+**Google Docs**
+
+- A web app that allows direct document editing in the browser
+- No downloads required
+- Offers features similar to traditional text editors, including automatic saving
+- Accessible from any device with internet, enhancing collaborative work
+
+**Netflix**
+
+- Known for its mobile app, but also functions well in the browser
+- Watch movies and series in the same quality as the app, without downloads
+- Useful for computers without the app installed or smart TVs using the browser
+- Intuitive navigation with quick video loading
+
+**Trello**
+
+- Excellent web app for organizing tasks and projects
+- Features a visually convenient interface to create lists, drag cards, and track progress
+- Boards are synchronized across devices (phone, tablet, computer) for easy access
+
+**Airbnb**
+
+- Quick search and booking of accommodations directly in the browser
+- Smooth website experience with user-friendly filters and interface
+- Simplifies the process of finding accommodations for short or long trips, ideal for users who prefer not to install apps or are using temporary devices
+
+### Hybrid apps
+
+- **A cross between native apps and web apps**
+- Developed with a single codebase usable on both Android and iOS
+- Do not rely on web technologies like PWAs
+- Utilize frameworks such as: **Flutter, Kotlin Multiplatform (KMP), Xamarin, React Native, Ionic**
+  - **Flutter**
+    - Developed by Google
+    - Draws everything on the screen using the device’s canvas
+    - Provides **complete control over app design**
+    - Native components are not used; specific plugins required for features (e.g., camera, GPS)
+    - Plugin maintenance depends on the developer community
+  - **React Native**
+    - Created by Facebook
+    - Code is written in JavaScript
+    - Utilizes native components of each system
+    - **Ensures familiar behavior and appearance** consistent with native Android/iOS
+    - Uses plugins for device resources, maintained by the developer community
+  - **Ionic**
+    - Follows a web-like approach
+    - Utilizes HTML, CSS, and JavaScript; runs within a WebView
+    - **Functions like a website installed on a phone**
+    - Accesses some native features (e.g., notifications, GPS) through plugins
+    - Ideal for those with web development experience
+  - **Kotlin Multiplatform (KMP)**
+    - Developed by JetBrains
+    - **Allows writing shared code while keeping platform-specific parts separate**
+    - Common foundation for app logic and business rules
+    - Flexibility to use native features when necessary
+    - Shares maximum code between platforms without compromising native capabilities
+- Allows code to be written once and deployed across multiple platforms, saving time and resources
+- **Heavy reliance on plugins for native features**
+  - Plugins are often community-created and maintained
+  - Potential issues with plugin updates and feature support
+
+#### Advantages
+
+- Combines the **benefits of both native and web apps**
+- **Enables development for multiple platforms simultaneously**
+- Ideal for smaller development teams or companies with tight timelines
+- Reduces resources spent on developing separate native apps for Android and iOS
+- Allows for seamless integration and compatibility across platforms
+- Saves time, enabling the team to focus on new features instead of duplicating work
+- Maintains the look and feel of native components while using shared code
+- Enables adjusting the app for each platform as needed
+- Ensures smooth functionality and familiarity for both Android and iOS users
+- Updates and fixes can be implemented in one place
+- Changes are reflected across all platforms, reducing complexity
+- **Streamlines the management of app versions**
+- Facilitates quicker deployment of updates
+
+#### Disadvantages
+
+- **Dependence on plugins for native device features (camera, GPS, facial recognition)**
+  - Many plugins are community-maintained, creating both benefits and drawbacks
+  - New iOS or Android versions may change functions, requiring timely plugin updates for compatibility
+  - Outdated plugins can lead to app crashes or loss of features
+  - Development teams rely on third parties to maintain app performance after OS updates
+- Can be optimized to mimic native apps, but will never be completely identical
+  - **Minor differences in component behaviour** may arise, especially on older/mobile devices with uncommon configurations
+  - Companies aiming for the best user experience might need to make manual adjustments for platform compatibility
+- Generally provide good **performance** but may struggle with complex features (e.g., games, augmented reality)
+  - Companies should assess whether the time and cost savings of hybrid development outweigh potential performance limitations
+
+#### Examples
+
+**Instagram**
+
+- Initially developed as a native app
+- Evolved to a hybrid approach with React Native for added features and multi-platform support
+- Maintains fluid navigation and integration with native mobile features (camera, notifications)
+- Allows quick implementation of new features without rewriting code for both Android and iOS
+
+**Uber**
+
+- Primarily uses React Native as a hybrid app
+- Quickly accesses device GPS to locate the user’s position and display nearby drivers
+- Essential integration with native features (maps, notifications) enhances user experience
+- The development team can share code across platforms while ensuring quality
+
+**Microsoft Teams**
+
+- Utilizes a hybrid approach for seamless operation across devices and systems
+- Focuses on accessibility as a work communication tool
+- Available on both computers and mobile devices
+- Ensures a consistent experience, facilitating easy transition between platforms
+- Supports seamless messaging, calls, and file sharing, showcasing hybrid technology benefits
+
+## How to choose the best type of application?
+
+- The answer isn’t simple; it **depends on the goals and methods for developing the app**
+  - Consider **what you want your app to achieve**
+  - Assess **willingness to invest** money, time, and effort
+- Several approaches are available, each with unique characteristics
+- Ideal solutions may vary based on the organization’s size:
+  - What works for a giant tech company may not suit a startup
+  - Smaller projects may require different considerations
+- Choice depends on the project's needs and the team's capabilities
+  - Each approach comes with its own advantages and challenges
+  - **Understanding goals and available resources** is crucial for making the best decision
+
+### What is the goal?
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Native Apps</th>
+      <th>Web or Hybrid Apps</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Best choice for</td>
+      <td><strong>Functionalities needing direct hardware interaction</strong></td>
+      <td><strong>Reaching the largest audience quickly and easily</strong></td>
+    </tr>
+    <tr>
+      <td>Ideal for</td>
+      <td>
+        Advanced games<br>
+        Augmented reality apps<br>
+        High-performance features
+      </td>
+      <td>
+        Projects requiring flexibility<br>
+        Applications working across multiple platforms<br>
+        Management systems<br>
+        Communication apps<br>
+        Limited use of the device’s native capabilities
+    </tr>
+    <tr>
+      <td>Offers</td>
+      <td>
+        Deeper control over app capabilities<br>
+        Full utilization of device features
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### How much investment is available?
+
+| Native Apps | Web or Hybrid Apps |
+| --- | --- |
+| Ideal for larget budgets and dedicated teams | Great for those starting or working with a tight budget |
+| Guarantee a more customized and polished experience | Allow for functional apps on multiple platforms with less development effort |
+| Suitable for projects that require high quality and specific features | A smart alternative for optimizing time and resources |
+| | Balance cost and results effectively |
+
 # Kotlin
 
 ## What is Kotlin?
@@ -297,399 +649,3 @@ account?.holder?.getName()
   - One treatment allows calling the `toString()` method on an object:
     - If the object is null, the compiler returns the String `"null"` instead of causing an error
       - This behavior is useful for debugging code
-
-# Cloud Computing
-
-- Delivery of Information Technology (IT) resources on demand via the internet, with pay-as-you-go pricing
-- Instead of buying, owning and maintaining physical data centers and servers, you can access technology services
-
-## History
-
-- 2000s: Cloud computing technology gains momentum as it is offered commercially
-  - 2006: The emergence of Amazon Web Services (AWS), which allowed businesses and individuals to rent virtual computers
-    - This suite of services included storage, computing, and networking, all based on the cloud
-  - 2007: Netflix launches its video streaming service, using the cloud to stream movies and other content
-  - 2008: launch of Google Cloud Platform (GCP)
-  - 2010: launch of Microsoft Azure
-
-## Characteristics
-
-- Ease of creating resources
-- Ease of scalability and maintenance of computing resources
-- Possibility of using Infra as Code (IaC)
-- Ease of thinking about Disaster Recovery
-- Cost control
-
-## Service models
-
-### Infrastructure as a Service (IaaS)
-
-- Virtual machines (e.g., AWS instances, Azure VMs)
-
-### Platform as a Service (PaaS)
-
-- Virtual machines, servers, networks, databases
-- Tools to support the application lifecycle (e.g., Heroku)
-
-### Software as a Service (SaaS)
-
-- Virtual machines, servers, networks, databases
-- Tools to support the application lifecycle
-- Software (e.g., SharePoint, Slack, Google Docs, Office 365, Trello)
-
-# Azure
-
-## Main advantages
-
-- Second largest cloud computing service provider used in the world
-- Easily scalable according to customer demands
-- Maximum capacity of a VM is 128vCPU and 3.5 TB memory
-- Supports a wide variety of frameworks and languages, like Java and C#
-- Allows working with different databases and operating systems
-- Offers many services without necessarily being Microsoft
-- Offers straightforward integration with Microsoft tools
-- Ease of migrating on-premises Microsoft tools to the cloud
-
-## Resource groups
-
-- Group items for a specific project to facilitate navigation
-  - All used resources are displayed when clicking on the group
-- Use grouping for cost estimation of a project
-  - Access the console to search the group for the estimated project value
-- To remove all resources after finishing a project, select the resource group and delete it
-  - No need to remove resources one by one
-
-### Creating a resource group
-
-- Basics
-  - Subscription
-  - Resource group name
-  - Region
-- Tags
-
-## Virtual machines
-
-Computing resources offered by the clouds, in which we can select disk capacities, memory, and processing power, among other resources
-
-### Creating a virtual machine
-
-#### Basics
-
-- Project details
-  - Subscription
-    - Resource group
-- Instance details
-  - Virtual machine name
-  - Region (normally the same as the resource group)
-  - Availability options:
-    - **No infrastructure redundancy required**
-    - Availability zone: separate resources within a region
-    - Availability set: distribute resources across multiple fault domains (distribute VMs across multiple physical hosts)
-    - Virtual machine scale set: distribute VMs across zones and fault domains at scale
-  - Security type: **Standard**, or Trusted launch virtual machines
-  - Image (OS)
-  - VM Architecture: Arm64 or **x64**
-  - Run with Azure Spot discount: idle Microsoft Azure resources they leave available
-  - Size
-  - Enable Hibernation
-- Administrator account
-  - Authentication type: **SSH public key** or Password
-  - Username
-  - SSH public key source
-  - SSH Key Type
-      - RSA: suitable for older systems or when compatibility is a primary concern
-      - Ed25519: recommended for new systems and applications where security and performance are critical
-  - Key pair name
-- Inbound port rules
-  - None: the machine will be completely inaccessible via the internet
-  - **Allow selected ports**
-    - Select inbound ports: HTTP (80), HTTPS (443), **SSH (22)**
-
-#### Disks
-
-- VM disk encryption
-  - Encryption at host
-- OS disk
-  - OS disk size
-  - OS disk type: Premium SSD, Standard SSD, or **Standard HDD** in a **locally-** or zone-redundant storage
-  - **Delete with VM**: When we remove the VM, the disk will be deleted along with it
-  - Key management: **platform-**, customer-, or platform- and customer-managed keys
-  - Enable Ultra Disk compatibility
-
-#### Networking
-
-- Network interface (automatically created when creating a virtual machine)
-  - Virtual network
-  - Subnet
-  - Public IP
-  - NIC network security group: None, **Basic**, or Advanced
-  - Public inbound ports
-    - None: the machine will be completely inaccessible via the internet
-    - **Allow selected ports**
-      - Select inbound ports: HTTP (80), HTTPS (443), **SSH (22)**, RDP (3389)
-  - **Delete public IP and NIC when VM is deleted**
-  - Enable accelerated networking
-- Load balancing
-  - Load balancing options: **None**, Azure load balancer, or Application gateway
-
-#### Management
-
-- Microsoft Defender for Cloud
-- Identity
-  - Enable system-assigned managed identity
-- Microsoft Entra ID
-  - Login with Microsoft Entra ID
-- Auto-shutdown
-  - Enable auto-shutdown
-- Backup
-  - Enable backup
-- Guest OS updates
-  - Enable periodic assessment
-  - Patch orchestration options: Image default
-
-#### Monitoring
-
-- Alerts
-  - Enable recommended alert rules: warn when the CPU percentage is 80%, when the available memory bytes are less than a certain number, and so on
-- Diagnostics
-  - Boot diagnostics
-    - **Enable with managed storage account**
-    - Enable with custom storage account
-    - Disable
- Enable OS guest diagnostics
-- Health
-  - Enable application health monitoring
-
-#### Advanced
-
-- Extensions
-- VM applications
-- Custom data and cloud init: we can include some script in the "custom data" box that will run when starting the VM
-- User data
-  - Enable user data
-- Performance (NVMe)
-  - Higher remote disk storage performance with NVMe
-- Host
-  - Host group
-- Capacity reservations
-  - Capacity reservation group
-- Proximity placement group
-  - Proximity placement group
-
-#### Tags
-
-### Connecting to a virtual machine
-
-#### Using SSH
-
-- Store the key we received on the machine and chmod it to 400 if it is Linux
-  - If it is Windows, use WSL to edit or create (using sudo) /etc/wsl.conf and add the following:
-    ```
-    [automount]
-    options = "metadata"
-    ```
-  - Shut down all WSL instances and restart an instance, and any chmod changes are now retained
-- Provide a path to the key:
-  ```
-  ssh -i <SSL key file> <Administrator account username>@<VM public IP address>
-  ```
-
-### Configuring the virtual machine as a web server (Node.js)
-
-#### Installing Node.js
-
-- Inside the Azure VM, run the commands below to prepare it as a web server
-  ```
-  sudo apt-get update
-  sudo apt-get install nodejs
-  sudo apt-get install npm
-  ```
-- Next, confirm the installation and version with the command:
-  ```
-  node --version`
-  ```
-
-#### Deploying a web application
-
-- First, clone the application repository and enter it:
-  ```
-  git clone <repository URL>
-  ```
-  - Enter the repository folder you just cloned
-    ```
-    cd <application directory>
-    ```
-- Update any configuration files to use information from Azure resources
-- Install the dependencies
-  ```
-  npm install
-  ```
-- Prepare the server to be a *webserver*
-  ```
-  npm install express --save
-  ```
-- Start the application
-  ```
-  DEBUG=<application directory>:* npm start
-  ```
-
-
-## Databases
-
-### Creating an Azure Database for MySQL
-
-#### Basics
-
-- Project details
-  - Subscription
-    - Resource group
-- Server details
-  - Server name
-  - Region (normally the same as the resource group)
-  - MySQL version
-  - Workload type:
-    - For small or medium size databases
-    - Tier 1 Business Critical Workloads
-    - **For development or hobby projects**
-  - Compute + storage
-  - Availability zone
-- High availability
-  - Enable high availability
-- Authentication
-  - Authentication method:
-    - **MySQL authentication only**
-    - Microsoft Entra authentication only
-    - MySQL and Microsoft Entra authentication
-  - Administrator login
-  - Password
-  - Confirm password
-
-#### Networking
-
-- Network connectivity
-  - Connectivity method:
-    - **Public access (allowed IP addresses) and Private endpoint**
-    - Private access (VNet integration)
-- Public access
-  - **Allow public access to this resource through the internet using a public IP address**
-  + **Add current client IP address**
-  + **Add 0.0.0.0 - 255.255.255.255**
-- Firewall rules
-  - Allow public access from any Azure service within Azure to this server
-- Private endpoints
-- Encrypted connections
-
-#### Security
-
-- User assigned managed identity
-- Key selection method:
-  - Enter a key identifier
-  - Select a key
-- Key
-
-#### Tags
-
-### Overview
-
-- Essentials
-  - Status
-  - Location
-  - Server name: the URL we will use to make the connections
-  - Administrator login
-  - Configuration
-  - MySQL version
-  - Availability zone
-  - Created on
-- Getting started
-- Properties: more detailed information, such as machines, high availability, and backup, among other data
-- Recommendations: if we were not following good practices, it would be informed here
-- Monitoring: graphs showing database usage information (CPU and memory usage, I/O percentage, DB connections and queries)
-
-### Connecting to a database
-
-#### Remove SSL
-
-- In the search field at the top of the "Settings > Server parameters" page, search for "ssl"
-  - A parameter called "require_secure_transport" will be displayed
-- In the "value" column, change from "ON" to "OFF"
-- Click "Save" in the upper left corner
-
-#### Add a database
-
-- Click on the "Add" button in the "Settings > Databases" page
-  - A pop-up will appear on the right side, titled "Create Database," below which are two buttons: "Save" and "Cancel"
-  - Right after that, we have three fields: "Name," "Character set," and "Collation"
-- Then we click on the "Save" button
-  - After clicking, a pop-up will appear in the upper right corner with the message "Creating MySQL database"
-  - After waiting a few minutes, the previous message will change to "Successfully created MySQL database"
-
-#### Log into the database
-
-- In "Connection details" on the "Connect" page, it tells us the hostname, username and password, which we entered at the time of configuration
-- Below, we have the option to connect via browser or locally
-  - Clicking on it, when expanded, displays the URL that we will use to connect in a command:
-    ```
- mysql -h <server name> -P 3306 -u <username> -p
-    ```
-      - In the option below to "Import and export data," it is in case we already have data to insert into the database
-  - However, before we use this instruction, we need to log into the virtual machine
-    - In the terminal, we will run the ssh command to log in, passing the key, the user, and the IP of the virtual machine
-      ```
- ssh -i <SSL key file> <Administrator account username>@<VM public IP address>
-      ```
-  - Once logged into the virtual machine, we can access the database
-  - Therefore, we will copy the mysql command and paste it into the terminal to run it
-    - In return, it will ask for a password
-  - We will type the password that we chose during configuration and select "Enter"
-    - In return, a welcome message will be displayed with some information 
-
-## Azure CLI
-
-### Initial steps
-
-#### Check version
-
-"`az version` "
-
-#### Login
-
-"`az login` "
-
-#### Find commands
-
-"`az find` "
-
-#### Interactive mode
-
-"`az interactive` "
-
-#### Resource group
-
-```az group create –location x –name y```
-"`az group list` "
-"`az group delete –name y'  "
-
-#### Service plan
-
-"`az appservice plan create –name z –resource-group y –sku a [--is-linux|?]` "
-
-#### Runtimes
-
-```az webapp list-runtimes```
-
-#### Web app
-
-"`az webapp create –name b –plan z –resource-group y –runtime c` "
-```az webapp browse -n b –resource-group y```
-
-## Azure Virtual Machines
-
-Software computers (which can have different operating systems) that perform the same function as physical computers.
-
-Avoid the cost of maintaining a physical environment of equipment in operation. For large applications, this can make a huge difference.
-
-## Azure Container Instances
-
-A solution for any scenario that can operate in isolated containers without orchestration.
-
-## SQL Database
